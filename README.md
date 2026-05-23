@@ -17,7 +17,7 @@ This is the first phase of an evolving project. This repository serves as the ma
 ## Lab Architecture
 
 <p align="center">
-  <img src="diagrams/SOC%20Home%20Lab%20Architecture%20Diagram.png" width="1100">
+  <img src="diagrams/SOC%20Home%20Lab%20Architecture%20Diagram%201.0.png" width="1100">
 </p>
 
 <p align="center">
