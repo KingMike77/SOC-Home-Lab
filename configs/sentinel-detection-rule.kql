@@ -1,0 +1,21 @@
+// Kali Password Spray Attack - MDE
+// MITRE ATT&CK: T1110.003 - Password Spraying
+// Tactic: Credential Access
+// Severity: Medium
+// Schedule: Every 5 minutes, 1-hour lookback
+//
+// Detection logic:
+// Flags any source IP generating more than 5 failed network logon attempts
+// against more than 1 account within a 5-minute window.
+// FailedAttempts > 5 reduces noise from isolated authentication failures.
+// TargetAccounts > 1 differentiates password spraying from single-user brute force.
+// 5-minute aggregation window balances sensitivity against false positives.
+
+DeviceLogonEvents
+| where TimeGenerated > ago(1h)
+| where ActionType == "LogonFailed"
+| where LogonType == "Network"
+| summarize FailedAttempts = count(), TargetAccounts = dcount(AccountName)
+    by RemoteIP, DeviceName, bin(TimeGenerated, 5m)
+| where FailedAttempts > 5 and TargetAccounts > 1
+| project TimeGenerated, RemoteIP, DeviceName, FailedAttempts, TargetAccounts
