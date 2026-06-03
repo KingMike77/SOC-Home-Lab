@@ -23,7 +23,7 @@ A continuation of the SOC Home Lab project. Phase 2 extends the existing Elastic
 
 ## Lab Architecture
 
-![SOC Home Lab Architecture Diagram Phase 2](../diagrams/SOC%20Home%20Lab%20Phase%202%20Architecture%20Diagram.png)
+![SOC Home Lab Architecture Diagram Phase 2](screenshots/SOC%20Home%20Lab%20Phase%202%20Architecture%20Diagram.png)
 
 ### Architecture Highlights
 
