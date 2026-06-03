@@ -281,4 +281,24 @@ Timestamp field mismatch and insufficient look-back window.
 
 ## Project Status
 
-This is the first phase of the SOC Home Lab. This repository is the main hub for the project — as the lab continues to evolve, new attack simulations, detections, and infrastructure components will be documented here.
+This repository is the main hub for the SOC Home Lab project. As the lab continues to evolve, new attack simulations, detections, and infrastructure components will be documented here.
+
+---
+
+## Phase 2 — Microsoft Defender for Endpoint & Sentinel ✅
+
+Phase 2 has been completed. The lab was extended with the full Microsoft enterprise security stack running in parallel alongside the existing Elastic deployment.
+
+**What was added:**
+- Microsoft 365 E5 tenant — `MensahCyberLab.onmicrosoft.com`
+- Microsoft Entra Connect Sync bridging `lab.local` AD to Entra ID
+- Microsoft Entra Hybrid Join on both Win11 endpoints
+- Microsoft Intune MDM enrollment — both endpoints enrolled and compliant
+- Microsoft Defender for Endpoint onboarded on both endpoints with live telemetry
+- Microsoft Sentinel SIEM with 10/10 MDE data tables connected
+- Custom KQL analytics rule detecting Kali password spray attacks across both endpoints
+- 34 Sentinel alerts fired across multiple detection windows
+
+The same Kali password spray attack (T1110.003) was detected simultaneously in both Elastic Stack and Microsoft Sentinel, enabling a direct dual-platform detection comparison.
+
+📁 [View Phase 2 Documentation →](./phase-2-mde-sentinel/README.md)
